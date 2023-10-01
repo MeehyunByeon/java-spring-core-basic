@@ -39,22 +39,24 @@ public class AppConfig {
 
     @Bean
     public MemberService memberService() {
-        System.out.println("call AppConfig.memberService");
+//        System.out.println("call AppConfig.memberService");
         return new MemberServiceImpl(memberRepository());
     }
 
     // static 있으면 싱글톤 안됨
     @Bean
     public MemoryMemberRepository memberRepository() {
-        System.out.println("call AppConfig.memberRepository");
+//        System.out.println("call AppConfig.memberRepository");
         return new MemoryMemberRepository();
     }
 
     @Bean
     public OrderService orderService() {
-        System.out.println("call AppConfig.orderService");
+//        System.out.println("call AppConfig.orderService");
         return new OrderServiceImpl(memberRepository(), discountPolicy());
+//        return null;
     }
+
 
     @Bean
     public DiscountPolicy discountPolicy() {
